@@ -15,6 +15,6 @@ export const sendMessageEmail = async ({ phone, name }) => {
 
     return json.errors ? { errors: json.errors } : [json];
   } catch (e) {
-    console.log(e);
+    throw e;
   }
 };

@@ -25,16 +25,15 @@ const index = ({ posts }) => {
 };
 
 export const getStaticProps = async () => {
-  const url =
-    "https://graph.instagram.com/me/media?fields=id,caption,media_url&access_token=IGQWRQX1VtVWp0eUNLMWEzSWhES2ZAicEh4aXE4Q1ZAXYXNGdDlLTUNKemZA3YXM5cTVteXpSRjNzY2hzNlJIX292dGZAnNHNQQ1hXMFFVdWZAqMGZAVNC10MVN0bjJxU1BzRnVYSnVrelJKQlhCeFdMenJRQ2ZArTzRaODAZD";
-  const data = await fetch(url);
-  const value = await data.json();
+  try {
+    const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url&access_token=${process.env.TOKEN_INSTAGRAM}`;
+    const data = await fetch(url);
+    const value = await data.json();
 
-  return {
-    props: {
-      posts: value,
-    },
-  };
+    return { props: { posts: value } };
+  } catch {
+    return { props: { posts: { data: new Array(8).fill(1, 0, 8) } } };
+  }
 };
 
 export default index;
