@@ -5,7 +5,7 @@ import styles from "../styles/cards.module.scss";
 const Cards = ({ posts = [] }) => {
   const router = useRouter();
   const cards = posts.data
-    .filter((item, index) => index < 8)
+    ?.filter((item, index) => index < 8)
     .map((item) => (
       <div key={item.id} className={styles.card}>
         <img src={item.media_url} alt={item.capture} />

@@ -26,7 +26,7 @@ const index = ({ posts }) => {
 
 export const getStaticProps = async () => {
   const url =
-    "https://graph.instagram.com/me/media?fields=id,caption,media_url&access_token=IGQWRQUTFBYkZAGVzJmVkI3ZATdjb2J6Q3FCTzd2TFNZAQkh0S3RmLVJCQzFESmw5OVBPV180ZAVAyd1J2ZAjZArOHVSd1pIY2xLaVFEc2NWUnRDOVNnVUFFbjlUT0xscktaa1RvM2hKUmlCWUxsLTJLdDZAtVGpqSWdZARkUZD";
+    "https://graph.instagram.com/me/media?fields=id,caption,media_url&access_token=IGQWRQX1VtVWp0eUNLMWEzSWhES2ZAicEh4aXE4Q1ZAXYXNGdDlLTUNKemZA3YXM5cTVteXpSRjNzY2hzNlJIX292dGZAnNHNQQ1hXMFFVdWZAqMGZAVNC10MVN0bjJxU1BzRnVYSnVrelJKQlhCeFdMenJRQ2ZArTzRaODAZD";
   const data = await fetch(url);
   const value = await data.json();
 
